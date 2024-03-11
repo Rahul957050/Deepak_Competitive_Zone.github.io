@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Series</title>
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f9f0;
+    text-align: center;
+    
+}
+
+#quiz {
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    background-color: #f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.options button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options button:hover {
+    background-color: #0056b3;
+}
+  footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+  .navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+  .nav-button {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: #555;
+}
+  
+  
+  </style>
+</head>
+<h1 style="padding:1rem;background-image:url('deepak002.png');">DEEPAK COMPETITIVE ZONE</h1>
+
+<body><div class="navbar">
+        <a href="index.html" class="nav-button">Home</a>
+         <a href="registration.html" class="nav-button">Registration</a>
+    </div>
+    <div id="quiz">
+        <h2 id="question"></h2>
+        <div id="options" class="options"></div>
+    </div>
+    <div id="result"></div>
+    
+    <script>
+const questions = [
+        {question: "Q1. What is the Synonyms of Confusion ?",
+        options: ["intrepidity", "stagnation", "perusal", "Commotion"],
+        answer: "Commotion "
+    },
+   {
+        question: "Q2. What is the Synonyms of Competent ?",
+        options: ["Complex", "Poor", "Capable", "Beginner"],
+        answer: "capable"
+    },
+  {
+        question: "Q3. What is the Synonyms of Announce ?",
+        options: ["denounce", "secret", "hide", "Advertise"],
+        answer: "advertise"
+    },
+ {
+        question: "Q4. What is the Synonyms of Moral ?",
+        options: ["ethical", "honourable", "godliness", "symphony"],
+        answer: "ethical"
+    },
+   {
+        question: "Q5. What is the Synonyms of  Exaltation ?",
+        options: ["dejection", "ecstasy", "satisfaction", "elaboration"],
+        answer: "ecstasy"
+    },
+  {
+        question: "Q6. What is the Synonyms of Deliberate ?",
+        options: ["casual", "hasty", "planned", "rushed"],
+        answer: "planned"
+    },
+   {
+        question: "Q7.  What is the Synonyms of  Remorse ?",
+        options: ["repentance", "slow", "liberate", "affinity"],
+        answer: "repentance"
+    },
+  {
+        question: "Q8. What is the Synonyms of  Obligatory ?",
+        options: ["unnecessary", "compulsory", "chosen", "optional"],
+        answer: "compulsory"
+    },
+  {
+        question: "Q9. What is the Synonyms of  Keen ?",
+        options: ["happy", "enthusiastic", "wild", "imitate"],
+        answer: "enthusiastic"
+    },
+ {
+        question: "Q10. What is the Synonyms of Amend ?",
+        options: ["rectify", "harm", "Impair", "worsen"],
+        answer: "rectify"
+    },
+  {
+        question: "Q11.What is the Synonyms of Impede ?",
+        options: ["intend", "prompt", "respite", "hinder"],
+        answer: "hinder"
+    },
+   {
+        question: "Q12. What is the Synonyms of Mercy ?",
+        options: ["legacy", "clarity", "clemency", "plurality"],
+        answer: "clemency"
+    },
+{
+        question: "Q13. What is the Synonyms of Wrathful ?",
+        options: ["pleased", "amiable", "furious", "cordial"],
+        answer: "furious"
+    },
+{
+        question: "Q14.  What is the Synonyms of  Belief ?",
+        options: ["faith", "promise", "system", "religion"],
+        answer: "faith"
+    },
+{
+        question: "Q15.  What is the Synonyms of Inherent ?",
+        options: ["increase", "superficial", "inborn", "conclusion"],
+        answer: "inborn"
+    },
+ 
+    // Include 49 more questions in a similar format
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const questionElement = document.getElementById('question');
+const optionsElement = document.getElementById('options');
+const resultElement = document.getElementById('result');
+
+function displayQuestion() {
+    questionElement.innerText = questions[currentQuestion].question;
+    optionsElement.innerHTML = "";
+    
+    questions[currentQuestion].options.forEach(option => {
+        const optionButton = document.createElement('button');
+        optionButton.textContent = option;
+        optionButton.addEventListener('click', () => checkAnswer(option));
+        optionsElement.appendChild(optionButton);
+    });
+}
+
+function checkAnswer(selectedAnswer) {
+    if (selectedAnswer === questions[currentQuestion].answer) {
+        score++;
+    }
+    
+    currentQuestion++;
+    
+    if (currentQuestion < questions.length) {
+        displayQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function showResult() {
+    questionElement.style.display = 'none';
+    optionsElement.style.display = 'none';
+    resultElement.innerText = `Your Score: ${score} / ${questions.length}`;
+}
+
+displayQuestion();
+
+</script>
+    <footer>
+    <p>&copy; This Website is Created by Deepak kumar.</p>
+  </footer>
+</body>
+</html>

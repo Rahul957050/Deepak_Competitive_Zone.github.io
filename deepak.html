@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Ads</title>
+    <style> 
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+  footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+.ad-container {
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ad-content {
+    display: none;
+    font-size: 1.2em;
+}
+
+.show {
+    display: block;
+}
+  .navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.nav-button {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: #555;
+}
+
+  </style>
+</head>
+<h1 style="padding:1em;background-color:#b6c5e5">Deepak Competitive Zone.</h1>
+<div>
+  <div class="navbar">
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="test1.html" class="nav-button">Go to Test</a>
+        <a href="all pdf.html" class="nav-button">previous year paper</a>
+    </div>
+   
+</div>
+<body>
+    <div class="ad-container">
+        <div class="ad-content" id="ad1">Boost your skills with our coaching services!</div>
+        <div class="ad-content" id="ad2">Reach your goals faster with our experienced coaches!</div>
+        <div class="ad-content" id="ad3">Join us today and unlock your full potential!</div>
+    </div>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const ads = document.querySelectorAll('.ad-content');
+    let currentAd = 0;
+
+    function showAd() {
+        ads.forEach(ad => ad.classList.remove('show'));
+        ads[currentAd].classList.add('show');
+        currentAd = (currentAd + 1) % ads.length;
+    }
+
+    showAd();
+    setInterval(showAd, 3000); // Change ad every 3 seconds
+});
+</script>
+<footer>
+    <p>&copy; This Website is Created by Deepak kumar.</p>
+  </footer>
+</body>
+</html>
